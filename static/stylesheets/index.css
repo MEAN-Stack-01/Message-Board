@@ -1,0 +1,76 @@
+body{
+  background: #2b5876;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #4e4376, #2b5876);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #4e4376, #2b5876); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* text-align: center; */
+}
+
+label,.users{
+  color : white;
+  font-size: 1em;
+
+}
+
+h2{
+  margin : 2em;
+  text-align: center;
+  color : white;
+}
+
+h3{
+  color : red;
+  font-size: 0.75em;
+
+}
+
+ul{
+  list-style: none;
+}
+
+.button1 {
+  height : 3em;
+  background: linear-gradient(to right, #cc2b5e, #753a88);
+  border-radius: 5px;
+  font-size: 1em;
+  color: white;
+  padding: .5em;
+  text-decoration: none;
+  margin-left : 15em;
+}
+
+
+.msgs{
+  margin-left : 10em;
+  margin-top : 1em;
+  list-style: none;
+  color: white;
+  font-size: 1.5em;
+}
+
+.form1{
+  margin-top : 1em;
+  font-size: 0.75em;
+}
+
+.button2 {
+  height : 2em;
+  background: linear-gradient(to right, #cc2b5e, #753a88);
+  border-radius: 5px;
+  font-size: 0.75em;
+  color: white;
+  padding: .2em;
+  text-decoration: none;
+  /* margin-left : 1em; */
+}
+
+.comments{
+  margin-left: 2em;
+  margin-top : 1em;
+  list-style: none;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.listblk{
+  background-color: #3498db;
+}

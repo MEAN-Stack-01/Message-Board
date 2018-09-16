@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>A Web Page!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/index.css">
+  </head>
+  <body>
+    <form class="form" action="/messages" method="post">
+        <h2>Welcome to Dojo Message Board!</h2>
+        <% JSON.stringify(messages) %>
+        <div class="form-group row">
+            <div class="col-md-6 offset-2">
+              <% if(messages.author) { %>
+                <% for (var x of messages.author) { %>
+                  <h3><%= x %></h3>
+                <% } %>
+              <% } %>
+              <label for="author">Name:</label>
+              <input type="text" class="form-control" id="author" name="author">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-md-6 offset-2">
+            <% if(messages.message) { %>
+              <% for (var x of messages.message) { %>
+                <h3><%= x %></h3>
+              <% } %>
+            <% } %>
+            <label for="message">Message:</label>
+            <textarea class="form-control field" name="message" id="message" rows="4"></textarea>
+          </div>
+        </div>
+        <input class="button1" type="submit" value="Post Message!">
+    </form>
+
+      <% for (var msg of msgs) { %>
+        <div class="msgs">
+          <li>Name:  <%= msg.author %> </li>
+          <li>Comment:  <%= msg.message %> </li>
+
+          <div class = "comments">
+            <form class="form form1" action="/comments/<%= msg.id %>" method="post">
+                <% for (var cmt of msg.comments) { %>
+                  <br>
+                  <li>Name:  <%= cmt.commentor %> </li>
+                  <li>Comment:  <%= cmt.comment %> </li>
+                  <br>
+                <% } %>
+                <% JSON.stringify(messages) %>
+                <div class="form-group row">
+                    <div class="col-md-6">
+                      <% if(messages.commentor) { %>
+                        <% for (var x of messages.commentor) { %>
+                          <h3><%= x %></h3>
+                        <% } %>
+                      <% } %>
+                      <label for="commentor">Name:</label>
+                      <input type="text" class="form-control" id="commentor" name="commentor">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-md-6">
+                    <% if(messages.comment) { %>
+                      <% for (var x of messages.comment) { %>
+                        <h3><%= x %></h3>
+                      <% } %>
+                    <% } %>
+                    <label for="comment">Comment:</label>
+                    <textarea class="form-control field" name="comment" id="comment" rows="4"></textarea>
+                  </div>
+                </div>
+                <input class="button2" type="submit" value="Comment!">
+            </form>
+          </div>
+        </div>
+      <% } %>
+
+
+  </body>
+</html>
